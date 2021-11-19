@@ -21,9 +21,6 @@ def solution(lottos, win_nums):
         else:
             low = 7-same
         
-    print("same: ", same, "zero: ", zero)
-    print("typeofSame", type(same),"typeofZero", type(zero))
-    print("typeoflottos", type(lottos[0]),"typeofwinnum", type(win_nums[0]))
     answer = [high,low]
     
     return answer
