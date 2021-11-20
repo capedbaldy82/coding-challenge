@@ -47,7 +47,6 @@ def solution(s):
 #     "eight":"8",
 #     "nine":"9"
 #     }
-
 # def solution(s):
 #     answer = s
 #     for key, value in num_dic.items():
