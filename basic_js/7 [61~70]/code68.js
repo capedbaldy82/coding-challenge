@@ -33,7 +33,7 @@ const solution = (busTime, nowTime) => {
   return answer;
 };
 
-const busTime = ["12:30", "13:20", "14:13"];
+const busTime = ["12:30", "13:20", "14:43"];
 const nowTime = "12:40";
 
 console.log(solution(busTime, nowTime));
