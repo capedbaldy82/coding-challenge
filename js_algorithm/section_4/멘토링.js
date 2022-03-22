@@ -23,7 +23,7 @@ function solution(test) {
     }
   });
 
-  console.log(canMento);
+  answer = canMento.length;
 
   return answer;
 }
@@ -34,13 +34,3 @@ let arr = [
   [3, 1, 4, 2],
 ];
 console.log(solution(arr));
-
-// (3,4) (3,1) (3,2)
-// (4,1) (4,2)
-// (1,2)
-// (4,3) (4,2) (4,1)
-// (3,2) (3,1)
-// (2,1)
-// (3,1) (3,4) (3,2)
-// (1,4) (1,2)
-// (4,2)

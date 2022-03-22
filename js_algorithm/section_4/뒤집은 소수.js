@@ -5,7 +5,7 @@ function solution(arr) {
     let reversedVal = parseInt((val + "").split("").reverse().join(""), 10);
     let flag = true;
 
-    for (let i = 2; i < reversedVal; i++) {
+    for (let i = 2; i <= parseInt(reversedVal / 2); i++) {
       if (reversedVal % i === 0) {
         flag = false;
         break;
