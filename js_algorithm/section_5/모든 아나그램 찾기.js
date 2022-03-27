@@ -34,16 +34,16 @@ function solution(map1, map2) {
     lt++;
   }
 
-  console.log(partHash);
-  console.log(strHash);
-
   return answer;
 }
 
 let a = "bacaAacba";
 let b = "abc";
-
+let start = new Date().getTime();
 console.log(solution(a, b));
+let end = new Date().getTime();
+
+console.log(`소요 시간: ${end - start}`);
 
 // map1 = map1.split("");
 // map2 = map2.split("").sort().join("");
