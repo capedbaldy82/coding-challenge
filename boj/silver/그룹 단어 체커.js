@@ -1,31 +1,28 @@
-function solution(a, str) {
-  let answer = 0;
-  let stack = [];
-  let flag = true;
+var fs = require("fs");
+const input = fs.readFileSync("./test.txt").toString().split("\n");
 
-  for (let x of str) {
-    for (let i = 0; i < x.length; i++) {
-      stack.push(x[i]);
-      if (stack.indexOf(x[i]) < i) {
-        if (stack[i] !== stack[i - 1]) {
-          flag = false;
-          break;
-        }
+let caseCount = parseInt(input[0], 10);
+let words = input.slice(1);
+let answer = 0;
+
+for (let x = 0; x < caseCount; x++) {
+  let flag = true;
+  let stack = [];
+
+  for (let i = 0; i < words[x].length; i++) {
+    if (stack.indexOf(words[x][i]) === -1) {
+      stack.push(words[x][i]);
+    } else {
+      if (stack.indexOf(words[x][i]) !== stack.length - 1) {
+        flag = false;
+        break;
       }
     }
-
-    if (flag) {
-      answer++;
-    } else {
-      flag = true;
-    }
-    stack = [];
   }
 
-  return answer;
+  if (flag) {
+    answer++;
+  }
 }
 
-const a = 5;
-const b = ["aaac", "aaaca", "ab", "aa", "aca", "ba", "bb"];
-
-console.log(solution(a, b));
+console.log(answer);
