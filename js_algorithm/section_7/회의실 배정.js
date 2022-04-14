@@ -1,17 +1,30 @@
 function solution(meeting) {
   let answer = 0;
 
-  for (let i = 0; i < meeting.length; i++) {
-    let idx = meeting[i][1];
-    let temp = 1;
-    for (let j = i; j < meeting.length; j++) {
-      if (idx <= meeting[j][0]) {
-        temp++;
-        idx = meeting[j][1];
-      }
+  meeting.sort((a, b) => {
+    if (a[1] === b[1]) return a[0] - b[0];
+    else return a[1] - b[1];
+  });
+
+  let endTime = 0;
+  for (let time of meeting) {
+    if (time[0] >= endTime) {
+      answer++;
+      endTime = time[1];
     }
-    if (answer < temp) answer = temp;
   }
+
+  // for (let i = 0; i < meeting.length; i++) {
+  //   let idx = meeting[i][1];
+  //   let temp = 1;
+  //   for (let j = i; j < meeting.length; j++) {
+  //     if (idx <= meeting[j][0]) {
+  //       temp++;
+  //       idx = meeting[j][1];
+  //     }
+  //   }
+  //   if (answer < temp) answer = temp;
+  // }
 
   return answer;
 }
