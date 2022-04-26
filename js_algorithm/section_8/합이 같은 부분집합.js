@@ -11,7 +11,7 @@ function solution(n, arr) {
         if (left[i] === 1) total_left += arr[i - 1];
         if (right[i] === 1) total_right += arr[i - 1];
       }
-      // console.log(total_left, total_right);
+      // console.log(left, right);
       if (total_left === total_right) answer = 'YES';
       return;
     } else {

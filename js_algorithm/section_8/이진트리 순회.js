@@ -2,17 +2,17 @@ function solution(n) {
   let answer = [];
 
   function DFS(num) {
-    if (num > 7) return;
+    if (num > n) return;
     else {
       DFS(num * 2);
-      DFS(num * 2 + 1);
       answer.push(num);
+      DFS(num * 2 + 1);
     }
   }
 
-  DFS(n);
+  DFS(1);
 
   return answer;
 }
 
-console.log(solution(1));
+console.log(solution(7));
