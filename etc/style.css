@@ -1,0 +1,26 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  border: 1px solid royalblue;
+  padding: 16px;
+}
+
+.flex-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.item {
+  max-width: 33.33%;
+  flex-basis: 333px;
+  flex-grow: 1;
+  min-height: 200px;
+  border: 1px solid coral;
+}
+
+@media screen and (max-width: 687px) {
+  .item {
+    max-width: 50%;
+  }
+}

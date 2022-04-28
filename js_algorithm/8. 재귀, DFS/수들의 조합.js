@@ -2,23 +2,22 @@ function solution(n, m, arr, multiples) {
   let answer = 0;
   let p = Array.from({ length: m }, () => 0);
 
-  function DFS(L, start) {
-    let total = 0;
+  function DFS(L, start, sum) {
     if (L === m) {
-      for (let i = 0; i < m; i++) {
-        total += p[i];
+      if (sum % multiples === 0) {
+        console.log(p);
+        answer++;
       }
-      if (total % multiples === 0) answer++;
       return;
     } else {
-      for (let i = start; i <= n; i++) {
-        p[L] = arr[i - 1];
-        DFS(L + 1, i + 1);
+      for (let i = start; i < n; i++) {
+        p[L] = arr[i];
+        DFS(L + 1, i + 1, sum + arr[i]);
       }
     }
   }
 
-  DFS(0, 1);
+  DFS(0, 0, 0);
 
   return answer;
 }
