@@ -14,8 +14,8 @@ function solution(n, r) {
 }
 
 const data = {
-  n: 33,
-  r: 19,
+  n: 5,
+  r: 2,
 };
 
 console.log(solution(data.n, data.r));
