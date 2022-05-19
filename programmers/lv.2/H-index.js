@@ -1,8 +1,13 @@
 function solution(citations) {
-  var answer = Math.max(...citations);
-  let flag = true;
+  var answer = 0;
 
-  citations.sort((a, b) => a - b);
+  citations.sort((a, b) => b - a);
+
+  for (let i = 0; i < citations.length; i++) {
+    if (i + 1 <= citations[i]) {
+      answer++;
+    }
+  }
 
   return answer;
 }
