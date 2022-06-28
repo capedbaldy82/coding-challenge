@@ -5,8 +5,7 @@ def solution(money):
     coins = [500,100,50,10]
 
     for coin in coins:
-        temp = math.floor(money / coin)
-        answer += temp
+        answer += money // coin
         money = money % coin
 
 
