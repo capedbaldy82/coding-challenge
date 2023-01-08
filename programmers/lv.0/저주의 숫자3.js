@@ -1,28 +1,16 @@
 function solution(n) {
-  let add = n;
-  let final = 0;
-  let count = 0;
+  let stack = [];
+  let i = 0;
 
-  const DFS = (x) => {
-    if (x === final) return;
-    else {
-      count = 0;
-      for (let i = x - add + 1; i <= x; i++) {
-        if (i % 3 === 0) count++;
-        else {
-          if ((i + '').includes('3')) count++;
-        }
-      }
-      final = x;
-      add = count;
-      DFS(x + count);
+  while (stack.length !== n) {
+    if (i % 3 !== 0 && !(i + '').includes('3')) {
+      stack.push(i);
     }
-  };
+    i++;
+  }
 
-  DFS(n);
-
-  return final;
+  return stack.pop();
 }
 
 const data = [10, 15, 40];
-console.log(solution(data[2]));
+console.log(solution(data[1]));
